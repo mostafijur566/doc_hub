@@ -13,10 +13,9 @@ class MyButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
 
-        width: MediaQuery.of(context).size.width * 0.35,
-        height: MediaQuery.of(context).size.height * 0.07,
+        padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(10),
             color: AppColors.mainColor
         ),
 

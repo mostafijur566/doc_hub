@@ -42,6 +42,8 @@ class MyInputField extends StatelessWidget {
                   child: TextFormField(
                     readOnly: widget == null ? false : true,
                     autofocus: false,
+                    minLines: 1,
+                    maxLines: 5,
                     cursorColor: Colors.grey[700],
                     controller: controller,
                     style: subTitleStyle,
