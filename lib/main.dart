@@ -1,3 +1,4 @@
+import 'package:doc_hub/pages/add_patient_page.dart';
 import 'package:doc_hub/pages/home_page.dart';
 import 'package:doc_hub/pages/login_page.dart';
 import 'package:flutter/material.dart';
@@ -16,10 +17,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
 
-        
+
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage()
+      home: const AddPatientPage()
     );
   }
 }

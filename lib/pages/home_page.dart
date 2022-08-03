@@ -20,9 +20,19 @@ class HomePage extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomText(text: 'Hello', textColor: AppColors.textColor, fontSize: 16),
-                      SizedBox(height: 8,),
-                      CustomText(text: 'Fahim Goni', textColor: AppColors.textColor, fontSize: 18, weight: FontWeight.bold,),
+                      CustomText(
+                          text: 'Hello',
+                          textColor: AppColors.textColor,
+                          fontSize: 16),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      CustomText(
+                        text: 'Fahim Goni',
+                        textColor: AppColors.textColor,
+                        fontSize: 18,
+                        weight: FontWeight.bold,
+                      ),
                     ],
                   ),
                   CircleAvatar(
@@ -31,79 +41,111 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               ),
-
-              SizedBox(height: 30,),
-              Image.asset('assets/images/home_img.png', width: 150,),
-              
+              SizedBox(
+                height: 30,
+              ),
+              Image.asset(
+                'assets/images/home_img.png',
+                width: 150,
+              ),
               Row(
                 children: [
                   Expanded(
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.20,
-                        margin: EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                            boxShadow: const [
-                              BoxShadow(
-                                  color: Color(0xFFe8e8e8),
-                                  blurRadius: 5.0,
-                                  offset: Offset(0, 5)),
-                              BoxShadow(color: Colors.white, offset: Offset(-5, 0)),
-                            ]
+                    height: MediaQuery.of(context).size.height * 0.20,
+                    margin: EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Color(0xFFe8e8e8),
+                              blurRadius: 5.0,
+                              offset: Offset(0, 5)),
+                          BoxShadow(color: Colors.white, offset: Offset(-5, 0)),
+                        ]),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.userPlus,
+                          size: 35,
+                          color: AppColors.mainColor,
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(FontAwesomeIcons.userPlus, size: 35, color: AppColors.mainColor,),
-                            SizedBox(height: 20,),
-                            CustomText(text: 'Patients List', textColor: AppColors.textColor, fontSize: 18, weight: FontWeight.bold,)
-                          ],
+                        SizedBox(
+                          height: 20,
                         ),
-                      )
-                  ),
-
+                        CustomText(
+                          text: 'Patients List',
+                          textColor: AppColors.textColor,
+                          fontSize: 18,
+                          weight: FontWeight.bold,
+                        )
+                      ],
+                    ),
+                  )),
                   Expanded(
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.20,
-                        margin: EdgeInsets.only(left: 10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                            boxShadow: const [
-                              BoxShadow(
-                                  color: Color(0xFFe8e8e8),
-                                  blurRadius: 5.0,
-                                  offset: Offset(0, 5)),
-                              BoxShadow(color: Colors.white, offset: Offset(-5, 0)),
-                            ]
+                    height: MediaQuery.of(context).size.height * 0.20,
+                    margin: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Color(0xFFe8e8e8),
+                              blurRadius: 5.0,
+                              offset: Offset(0, 5)),
+                          BoxShadow(color: Colors.white, offset: Offset(-5, 0)),
+                        ]),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.userGroup,
+                          size: 35,
+                          color: AppColors.mainColor,
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(FontAwesomeIcons.userGroup, size: 35, color: AppColors.mainColor,),
-                            SizedBox(height: 20,),
-                            CustomText(text: 'Add Patient', textColor: AppColors.textColor, fontSize: 18, weight: FontWeight.bold,)
-                          ],
+                        SizedBox(
+                          height: 20,
                         ),
-                      )
-                  ),
+                        CustomText(
+                          text: 'Add Patient',
+                          textColor: AppColors.textColor,
+                          fontSize: 18,
+                          weight: FontWeight.bold,
+                        )
+                      ],
+                    ),
+                  )),
                 ],
               ),
-              SizedBox(height: 70,),
+              SizedBox(
+                height: 70,
+              ),
               Column(
                 children: [
                   Container(
-                    width: 100,
-                    height: 100,
-                    child: Icon(FontAwesomeIcons.rightFromBracket, color: AppColors.mainColor, size: 35,),
+                    width: 80,
+                    height: 80,
+                    child: Icon(
+                      FontAwesomeIcons.rightFromBracket,
+                      color: AppColors.mainColor,
+                      size: 35,
+                    ),
                     decoration: BoxDecoration(
                         color: Colors.green.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(50)
-                    ),
+                        borderRadius: BorderRadius.circular(50)),
                   ),
-                  SizedBox(height: 10,),
-                  CustomText(text: 'Log Out', textColor: AppColors.textColor, fontSize: 18, weight: FontWeight.w600,)
+                  SizedBox(
+                    height: 10,
+                  ),
+                  CustomText(
+                    text: 'Log Out',
+                    textColor: AppColors.textColor,
+                    fontSize: 18,
+                    weight: FontWeight.w600,
+                  )
                 ],
               )
             ],
