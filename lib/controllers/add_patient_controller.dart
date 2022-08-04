@@ -1,6 +1,7 @@
 import 'package:doc_hub/data/repository/add_patient_repo.dart';
 import 'package:doc_hub/models/add_data_model.dart';
 import 'package:doc_hub/models/response_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,9 +25,10 @@ class AddPatientController extends GetxController{
         String message;
         message = response.body['message'];
         Get.snackbar(
-            'Successful!', message,
+            'Added!', message,
             colorText: Colors.white,
-            backgroundColor: Colors.green
+            backgroundColor: Colors.green,
+          icon: Icon(CupertinoIcons.person_add_solid, color: Colors.white,)
         );
       }
       else{
@@ -54,14 +56,14 @@ class AddPatientController extends GetxController{
     if(response.statusCode == 200){
       String message = response.body['message'];
       Get.snackbar(
-          'Successful!', message,
+          'Deleted!', message,
           colorText: Colors.white,
-          backgroundColor: Colors.green
+          backgroundColor: Colors.red,
+        icon: Icon(CupertinoIcons.delete, color: Colors.white,)
       );
     }
 
     else{
-      Get.snackbar('Oops!', "Couldn't delete the blog!");
     }
   }
 }

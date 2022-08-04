@@ -1,5 +1,6 @@
 import 'package:doc_hub/data/repository/update_patient_data_repo.dart';
 import 'package:doc_hub/models/add_data_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,9 +23,10 @@ class UpdatePatientDataController extends GetxController{
     if(response.statusCode == 200){
       responseModel = ResponseModel(true, response.body['message']);
       Get.snackbar(
-          'Successful!', response.body['message'],
+          'Updated!', response.body['message'],
           colorText: Colors.white,
-          backgroundColor: Colors.green
+          backgroundColor: Colors.green,
+        icon: Icon(CupertinoIcons.pencil_ellipsis_rectangle, color: Colors.white,)
       );
     }
 
