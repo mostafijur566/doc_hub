@@ -8,8 +8,8 @@ class PatientListController extends GetxController{
   final PatientListRepo patientListRepo;
   PatientListController({required this.patientListRepo});
 
-  List<dynamic> _allPatientList = [];
-  List<dynamic> get allPatientList => _allPatientList;
+  List<Patients> _allPatientList = [];
+  List<Patients> get allPatientList => _allPatientList;
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;
@@ -21,8 +21,8 @@ class PatientListController extends GetxController{
   String? medicine;
   String? disease;
 
-  Future<void> getPatientList() async{
-    Response response = await patientListRepo.getPatientList();
+  Future<void> getPatientList(String query) async{
+    Response response = await patientListRepo.getPatientList(query);
     if(response.statusCode == 200){
       _allPatientList = [];
       _allPatientList.addAll(Patient.fromJson(response.body).patients);

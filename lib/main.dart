@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     Get.find<AuthController>().userLoggedIn();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Doc Hub',
       theme: ThemeData(
 
 

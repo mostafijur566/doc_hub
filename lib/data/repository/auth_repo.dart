@@ -1,4 +1,5 @@
 import 'package:doc_hub/data/api/api_client.dart';
+import 'package:doc_hub/models/change_password_model.dart';
 import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -47,5 +48,9 @@ class AuthRepo{
 
   Future<void> clearToken() async{
     await sharedPreferences.clear();
+  }
+
+  Future<Response> changedPassword(ChangePasswordModel changePasswordModel) async{
+    return await apiClient.updateData(AppConstants.CHANGE_PASSWORD_ENDPOINT, changePasswordModel.toJson());
   }
 }

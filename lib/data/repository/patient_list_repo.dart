@@ -6,8 +6,8 @@ class PatientListRepo extends GetxService{
   final ApiClient apiClient;
   PatientListRepo({required this.apiClient});
   
-  Future<Response> getPatientList() async{
-    return await apiClient.getData(AppConstants.GET_PATIENT_LIST_ENDPOINT);
+  Future<Response> getPatientList(String query) async{
+    return await apiClient.getData(AppConstants.PATIENT_SEARCH_ENDPOINT + '?search=$query');
   }
 
   Future<Response> getPatient(String id) async{

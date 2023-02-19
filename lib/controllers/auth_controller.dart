@@ -1,4 +1,6 @@
+import 'package:doc_hub/models/change_password_model.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import '../data/repository/auth_repo.dart';
@@ -80,5 +82,35 @@ class AuthController extends GetxController implements GetxService{
 
   Future<void> clearToken() async{
     await authRepo.clearToken();
+  }
+  
+  Future<ResponseModel> changePassword(ChangePasswordModel changePasswordModel) async{
+    _isLoading = true;
+    update();
+    Response response = await authRepo.changedPassword(changePasswordModel);
+
+    late ResponseModel responseModel;
+
+    if(response.statusCode == 200){
+      responseModel = ResponseModel(true, 'Successful');
+      Get.snackbar('Successful', response.body['message'],
+        icon: Icon(FontAwesomeIcons.check, color: Colors.white,),
+        backgroundColor: Colors.green,
+        colorText: Colors.white
+      );
+    }
+    
+    else if(response.statusCode == 400){
+      responseModel = ResponseModel(false, 'something went wrong');
+      Get.snackbar('Wrong', response.body['message'],
+          icon: Icon(FontAwesomeIcons.times, color: Colors.white),
+          backgroundColor: Colors.red,
+          colorText: Colors.white
+      );
+    }
+
+    _isLoading = false;
+    update();
+    return responseModel;
   }
 }
